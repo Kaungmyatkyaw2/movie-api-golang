@@ -51,6 +51,12 @@ db/migrations/up: confirm
 # ==================================================================================== #
 
 
+## test: run all written tests
+.PHONY: test/api
+test/api:
+	@echo 'Testing written api tests...'
+	go test -race -vet=off ./cmd/api
+
 ## audit: tidy dependencies and format, vet and test all code
 .PHONY: audit
 audit: vendor
